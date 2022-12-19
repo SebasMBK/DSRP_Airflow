@@ -10,18 +10,13 @@ default_args = {"owner": "airflow"}
 
 with DAG(
     dag_id='dag_project',
-    start_date=datetime(2022,11,23),
+    start_date=datetime(2022,12,19),
     schedule_interval='@daily',
     catchup=False,
     max_active_runs=1,
     default_args=default_args,
     tags=['project']
 ) as dag:
-
-#    create_raw_bucket = S3CreateBucketOperator(
-#        task_id="create_rawbucket",
-#        bucket_name="bucketrawcitu"
-#    )
 
     invoke_scraper_lambda_function = AwsLambdaInvokeFunctionOperator(
     task_id='scraper_lambda_function',
