@@ -9,7 +9,6 @@ testing
 .env
 logs
 plugins
-dags
 
 # Virtual environment
 Pipfile
